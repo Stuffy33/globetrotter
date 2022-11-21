@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 import Form from "react-bootstrap/Form";
@@ -14,16 +14,15 @@ import { Link, useHistory } from "react-router-dom";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
-import { SetCurrentUserContext } from "../../App";
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
 function SignInForm() {
-  const setCurrentuser = useContext(SetCurrentUserContext);
+  const setCurrentUser = useSetCurrentUser();
 
   const [signInData, setSignInData] = useState({
     username: "",
     password: "",
   });
-
   const { username, password } = signInData;
 
   const [errors, setErrors] = useState({});
@@ -34,12 +33,13 @@ function SignInForm() {
 
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
-      setCurrentuser(data.user);
+      setCurrentUser(data.user);
       history.push("/");
     } catch (err) {
       setErrors(err.response?.data);
     }
   };
+
   const handleChange = (event) => {
     setSignInData({
       ...signInData,
@@ -56,7 +56,7 @@ function SignInForm() {
             <Form.Group controlId="username">
               <Form.Label className="d-none">Username</Form.Label>
               <Form.Control
-                input="text"
+                type="text"
                 placeholder="Username"
                 name="username"
                 className={styles.Input}
@@ -81,13 +81,11 @@ function SignInForm() {
                 onChange={handleChange}
               />
             </Form.Group>
-
             {errors.password?.map((message, idx) => (
               <Alert key={idx} variant="warning">
                 {message}
               </Alert>
             ))}
-
             <Button
               className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
               type="submit"
