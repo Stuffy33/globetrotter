@@ -1,9 +1,20 @@
-import React from 'react'
+import { useState, useRef, useEffect } from "react";
 
 function useClickOutsideToggle() {
-  return (
-    <div>useClickOutsideToggle</div>
-  )
+  const [expanded, setExpanded] = useState(false);
+  const ref = useRef(null);
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (ref.current && !ref.current.contains(e.target)) {
+        setExpanded(false);
+      }
+    };
+    document.addEventListener("mouseup", handleClickOutside);
+    return () => {
+      document.removeEventListener("mouseup", handleClickOutside);
+    };
+  }, [ref]);
+  return { expanded, setExpanded, ref };
 }
 
-export default useClickOutsideToggle
+export default useClickOutsideToggle;
