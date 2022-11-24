@@ -44,9 +44,16 @@ const NavBar = () => {
       <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
+        to="/about"
+      >
+        <i className="fas fa-address-card"></i>About
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
         to="/feed"
       >
-        <i className="fas fa-stream"></i>Feed
+        <i className="fas fa-stream"></i>Following
       </NavLink>
       <NavLink
         className={styles.NavLink}
@@ -96,6 +103,7 @@ const NavBar = () => {
         <NavLink to="/">
           <Navbar.Brand>
             <img src={logo} alt="logo" height="45" />
+            GlobeTrotter
           </Navbar.Brand>
         </NavLink>
         {currentUser && addPostIcon}
