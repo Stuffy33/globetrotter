@@ -7,16 +7,20 @@
   margin-left: 2px;
   margin-right: 2px;
   min-width: 75px;
+  color: black;
+  background-color: #00ca18;
 }
 
 .Button:hover {
   opacity: 0.8;
   border-color: transparent;
   cursor: pointer;
+  color: #00ca18;
+  background-color: black;
 }
 
 .Button:hover:active {
-  background-color: #00ca18 !important;
+  background-color: black !important;
 }
 
 .Button:active {
@@ -32,38 +36,36 @@
   width: 100%;
 }
 
-.Green,
-.GreenOutline:hover,
-.Bright:hover {
-  background-color: #00ca18;
-  color: #ffffff;
-}
-
+/* upload new image in post */
 .GreenOutline,
 .Green:hover {
-  /* border: 1px solid #2142b2; */
-  background-color: #ffffff;
+  background-color: #00ca18;
+  color: black;
+}
+
+/* followers passive */
+.Black,
+.BlackOutline:hover {
+  background-color: #00ca18;
+  color: black;
+}
+/* followers hover */
+.Black:hover,
+.BlackOutline {
+  background-color: black;
   color: #00ca18;
 }
 
-.Black,
-.BlackOutline:hover {
-  /* background-color: #242a3d;
-  color: white; */
-  background-color: #242a3d;
-  color: aliceblue;
-}
-
-.Black:hover,
-.BlackOutline {
-  /* background-color: #dadadf;
-  color: #242a3d;
-  border-color: #242a3d; */
-  background-color: aliceblue;
-  color: #242a3d;
-}
-
+/* sign in passive */
 .Bright {
-  background-color: #2ed9ff;
+  background-color: #00ca18;
+  color: black;
+}
+
+/* sign in hover */
+.Green,
+.GreenOutline:hover,
+.Bright:hover {
+  background-color: black;
   color: #00ca18;
 }

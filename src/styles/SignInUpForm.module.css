@@ -1,13 +1,14 @@
 .Row {
   height: calc(100vh - 81px);
+  margin-top: 30px;
 }
 .Input {
   background: #ffffff;
-  border: 1px solid #f0f1f9;
+  border: 1px solid black;
   box-sizing: border-box;
   border-radius: 2px;
-  color: #7177a1;
-  text-align: center;
+  color: black;
+  text-align: left;
   padding: 10px;
 }
 
@@ -29,8 +30,12 @@
   margin: auto;
 }
 
+.Link:hover {
+  color: #00ca18;
+}
+
 .Link span {
-  color: #ff9254;
+  color: #00ca18;
 }
 
 .Container {
@@ -44,3 +49,4 @@
 .SignUpCol {
   height: 375px;
 }
+
