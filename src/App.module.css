@@ -70,6 +70,9 @@ figure {
   text-align: center;
   display: inline-block;
 }
+#shirt {
+  color: #00ca18;
+}
 
 /* scrollbar */
 *::-webkit-scrollbar {

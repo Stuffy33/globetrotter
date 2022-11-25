@@ -1,8 +1,13 @@
 import React from "react";
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
+import Card from "react-bootstrap/Card";
+import Media from "react-bootstrap/Media";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
+// import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { MoreDropdown } from "../../components/MoreDropdown";
@@ -22,6 +27,7 @@ const Post = (props) => {
     updated_at,
     postPage,
     setPosts,
+    clothing,
   } = props;
 
   const currentUser = useCurrentUser();
@@ -98,11 +104,15 @@ const Post = (props) => {
       <Card.Body>
         {title && <Card.Title className="text-center">{title}</Card.Title>}
         {content && <Card.Text>{content}</Card.Text>}
+        <i className={`fas fa-tshirt ${styles.Shirt}`}/>
+        {clothing}
         <div className={styles.PostBar}>
           {is_owner ? (
             <OverlayTrigger
               placement="top"
-              overlay={<Tooltip>You can't like your own post!</Tooltip>}
+              overlay={
+                <Tooltip>Nice try but you can't like your own posts!</Tooltip>
+              }
             >
               <i className="far fa-heart" />
             </OverlayTrigger>

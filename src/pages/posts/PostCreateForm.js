@@ -28,8 +28,9 @@ function PostCreateForm() {
     title: "",
     content: "",
     image: "",
+    clothing: "",
   });
-  const { title, content, image } = postData;
+  const { title, content, image, clothing } = postData;
 
   const imageInput = useRef(null);
   const history = useHistory();
@@ -58,6 +59,7 @@ function PostCreateForm() {
     formData.append("title", title);
     formData.append("content", content);
     formData.append("image", imageInput.current.files[0]);
+    formData.append("clothing", clothing);
 
     try {
       const { data } = await axiosReq.post("/posts/", formData);
@@ -98,6 +100,27 @@ function PostCreateForm() {
         />
       </Form.Group>
       {errors?.content?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      <Form.Group>
+        <Form.Label>Clothing</Form.Label>
+        <Form.Control
+          as="select"
+          defaultValue="comfy"
+          // rows={6}
+          name="clothing"
+          onChange={handleChange}
+          aria-label="clothing"
+        >
+          <option value="comfy">Comfy</option>
+          <option value="warm">Warm</option>
+          <option value="swimming">Swimming</option>
+          <option value="fancy">Fancy</option>
+        </Form.Control>
+      </Form.Group>
+      {errors?.clothing?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
