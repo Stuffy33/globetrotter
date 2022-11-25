@@ -14,10 +14,6 @@ import btnStyles from "../../styles/Buttons.module.css";
 import Asset from "../../components/Asset";
 import { useRedirect } from "../../hooks/useRedirect";
 
-/**
- * Render CreateArticleForm.
- * Supply user with input fields to create an Article.
- */
 function CreateFoodForm() {
   useRedirect("loggedOut");
 
