@@ -9,3 +9,6 @@
   right: 0;
   z-index: 99;
 }
+a:hover:active {
+  background-color: black !important;
+}

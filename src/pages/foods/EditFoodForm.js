@@ -23,8 +23,8 @@ function EditFoodForm() {
     title: "",
     content: "",
     image: "",
-    dress_code,
-    kids_friendly,
+    dress_code: "",
+    kids_friendly: "",
   });
 
   const { title, content, image, dress_code, kids_friendly } = foodData;

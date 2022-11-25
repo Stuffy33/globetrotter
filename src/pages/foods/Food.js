@@ -69,7 +69,7 @@ function Food(props) {
         {content && <Card.Text>{content}</Card.Text>}
         <i className={`fas fa-tshirt ${styles.Shirt}`} />
         {dress_code}
-        {kids_friendly}
+        <p>Kids friendly: {kids_friendly}</p>
       </Card.Body>
     </Card>
   );

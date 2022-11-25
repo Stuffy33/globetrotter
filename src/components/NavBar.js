@@ -56,7 +56,7 @@ const NavBar = () => {
         activeClassName={styles.Active}
         to="/foods"
       >
-        <i className="fas fa-address-card"></i>Restaurant
+        <i className="fa fa-cutlery"></i>Restaurant
       </NavLink>
       <NavLink
         className={styles.NavLink}
@@ -144,7 +144,7 @@ const NavBar = () => {
               activeClassName={styles.Active}
               to="/"
             >
-              <i className="fas fa-home"></i>Home
+              <i className="fa fa-glass"></i>Activity
             </NavLink>
             {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>
