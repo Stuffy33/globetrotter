@@ -16,6 +16,8 @@ import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import NotFound from "./components/NotFound";
 import About from "./pages/about/About";
+import Confirmations from "./pages/contact/Confirmations";
+import ContactForm from "./pages/contact/ContactForm";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -75,6 +77,8 @@ function App() {
             render={() => <ProfileEditForm />}
           />
           <Route exact path="/about" render={() => <About />} />
+          <Route exact path="/confirmations" render={() => <Confirmations />} />
+          <Route exact path="/contact" render={() => <ContactForm />} />
           <Route render={() => <NotFound />} />
         </Switch>
       </Container>

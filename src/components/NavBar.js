@@ -67,6 +67,13 @@ const NavBar = () => {
       </NavLink>
       <NavLink
         className={styles.NavLink}
+        activeclassname={styles.Active}
+        to="/contact"
+      >
+        <i className="fas fa-envelope"></i> Contact
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
         to={`/profiles/${currentUser?.profile_id}`}
       >
         <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
@@ -96,7 +103,7 @@ const NavBar = () => {
     <Navbar
       expanded={expanded}
       className={styles.NavBar}
-      expand="md"
+      expand="xl"
       fixed="top"
     >
       <Container>
