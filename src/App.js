@@ -18,6 +18,10 @@ import NotFound from "./components/NotFound";
 import About from "./pages/about/About";
 import Confirmations from "./pages/contact/Confirmations";
 import ContactForm from "./pages/contact/ContactForm";
+import FoodsPage from "./pages/foods/FoodsPage";
+import CreateFoodForm from "./pages/foods/CreateFoodForm";
+import EditFoodForm from "./pages/foods/EditFoodForm";
+import FoodPage from "./pages/foods/FoodPage";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -79,6 +83,10 @@ function App() {
           <Route exact path="/about" render={() => <About />} />
           <Route exact path="/confirmations" render={() => <Confirmations />} />
           <Route exact path="/contact" render={() => <ContactForm />} />
+          <Route exact path="/foods" render={() => <FoodsPage />} />
+          <Route exact path="/foods/create" render={() => <CreateFoodForm />} />
+          <Route exact path="/foods/:id/edit" render={() => <EditFoodForm />} />
+          <Route exact path="/foods/:id" render={() => <FoodPage />} />
           <Route render={() => <NotFound />} />
         </Switch>
       </Container>
