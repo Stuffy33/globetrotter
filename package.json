@@ -23,15 +23,9 @@
   "scripts": {
     "heroku-prebuild": "npm install -g serve",
     "start": "react-scripts start",
-    "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
@@ -46,8 +40,6 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^8.28.0",
-    "eslint-plugin-react": "^7.31.11",
     "msw": "^0.35.0"
   }
 }
