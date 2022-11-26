@@ -185,6 +185,10 @@ All fonts were obtained from the Google Fonts library.
 
 1. CSS files pass through the [Jigsaw validator](src/static/Jigsaw%20validator.png) with no issues found.
 
+----xxxxx OBS xxxxx -----
+I contacted student care and got helped by Ger
+i couldt not deploy to heroku while using ESLint so it has been uninstalled on the deployed verison.
+
 2. a. Javascript files pass through [ESLint](https://eslint.org/). The following issues were raised, and have been intentionally ignored as they are in relation to code that was provided in the Moments Walkthrough project:
 
 - Props spreading is forbidden
